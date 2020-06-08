@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="us" class="ie6 no-js" dir="ltr"> <![endif]-->
+<!--[if IE 7 ]> <html lang="us" class="ie7 no-js" dir="ltr"> <![endif]-->
+<!--[if IE 8 ]> <html lang="us" class="ie8 no-js" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]> <html lang="us" class="ie ie9 no-js" dir="ltr"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class=" no-js" dir="ltr">
+
+<!-- rendered at UTC: Monday, June 8, 2020 12:22 PM -->
+<!--<![endif]-->
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#  place: http://ogp.me/ns/place#">
+
+    <script>
+    window.feMsgConfig = {
+        "Environment": "production",
+        "Cluster": "6A",
+        "DC": "SG",
+        "PageTypeId": 1,
+        "Disable": false
+    };
+    </script>
+        <script type="text/javascript" id="messagingClientLite">
+    !function(n, t) {
+        var i,
+            r;
+        if ("object" == typeof exports && "object" == typeof module)
+            module.exports = t();
+        else if ("function" == typeof define && define.amd)
+            define([], t);
+        else {
+            i = t();
+            for (r in i)
+                ("object" == typeof exports ? exports : n)[r] = i[r]
+        }
+    }("undefined" != typeof self ? self : this, function() {
+        return function(n) {
+            function t(r) {
+                if (i[r])
+                    return i[r].exports;
+                var u = i[r] = {
+                    i: r,
+                    l: !1,
+                    exports: {}
+                };
+                return n[r].call(u.exports, u, u.exports, t), u.l = !0, u.exports
+            }
+            var i = {};
+            return t.m = n, t.c = i, t.d = function(n, i, r) {
+                t.o(n, i) || Object.defineProperty(n, i, {
+                    enumerable: !0,
+                    get: r
+                })
+            }, t.r = function(n) {
+                "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(n, Symbol.toStringTag, {
+                    value: "Module"
+                });
+                Object.defineProperty(n, "__esModule", {
+                    value: !0
+                })
+            }, t.t = function(n, i) {
+                var r,
+                    u;
+                if ((1 & i && (n = t(n)), 8 & i) || 4 & i && "object" == typeof n && n && n.__esModule)
+                    return n;
+                if (r = Object.create(null), t.r(r), Object.defineProperty(r, "default", {
+                    enumerable: !0,
+                    value: n
+                }), 2 & i && "string" != typeof n)
+                    for (u in n)
+                        t.d(r, u, function(t) {
+                            return n[t]
+                        }.bind(null, u));
+                return r
+            }, t.n = function(n) {
+                var i = n && n.__esModule ? function() {
+                    return n.default
+                } : function() {
+                    return n
+                };
+                return t.d(i, "a", i), i
+            }, t.o = function(n, t) {
+                return Object.prototype.hasOwnProperty.call(n, t)
+            }, t.p = "", t(t.s = 150)
+        }({
+            12: function(n, t, i) {
+                "use strict";
+                function r(n, t, i) {
+                    for (var r, f, e = i.length, u = 0; u < e; u++)
+                        if (r = i[u], r)
+                            for (f in r)
+                                r.hasOwnProperty(f) && n(f, r[f])
+                }
+                i.d(t, "a", function() {
+                    return r
+                })
+            },
+            150: function(n, t, i) {
+                "use strict";
+                var r;
+                i.r(t);
+                var u = i(29),
+                    f = i(17),
+                    e = function() {
+                        function n() {
+                            this.buffer = {
+                                items: []
+                            };
+                            this.contextData = {}
+                        }
+                        return n.prototype.send = function(t) {
+                            var r = this.buffer.items,
+                                i = n.MaxBufferSize - r.length;
+                            i > 0 && (t instanceof Array ? (i < t.length && (t = t.slice(0, i)), this.buffer.items = t.concat(r)) : this.buffer.items.push(t))
+                        }, n.prototype.dispose = function(n) {
+                            this.buffer.items.length = 0;
+                            n && n()
+                        }, n.prototype.environment = function() {}, n.prototype.context = function(n) {
+                            var t = this.contextData;
+                            t.sessionId = n.sessionId || t.sessionId;
+                            t.userId = n.userId || t.userId
+                        }, n.MaxBufferSize = 15e3, n
+                    }(),
+                    o = i(42);
+                i.d(t, "MessagingClient", function() {
+                    return r
+                });
+                r = function() {
+                    function n(n) {
+                        this._test = n
+                    }
+                    return n.create = function(t) {
+                        return n.instantiate(t)
+                    }, n.instantiate = function(t) {
+                        return (new n).instantiate(t)
+                    }, n.environment = function(t) {
+                        return new n(t)
+                    }, n.prototype.instantiate = function(n) {
+                        var t = f.a.get(),
+                            i,
+                            r;
+                        return (t.environment = t.environment || n, t.test = t.test || this._test, t.messagingClient) ? t.messagingClient : (i = new e, r = new o.a(i, new u.a), t.buffer = i.buffer, t.context = i.contextData, t.messagingClient = r, r)
+                    }, n
+                }()
+            },
+            17: function(n, t, i) {
+                "use strict";
+                i.d(t, "a", function() {
+                    return f
+                });
+                var u = i(4),
+                    r = "MessagingClient-LiteData",
+                    f = function() {
+                        function n() {}
+                        return n.get = function() {
+                            var n = u.a.current();
+                            return n[r] || (n[r] = {})
+                        }, n.clear = function() {
+                            delete u.a.current()[r]
+                        }, n
+                    }()
+            },
+            18: function(n) {
+                var t = function() {
+                    return this
+                }();
+                try {
+                    t = t || new Function("return this")()
+                } catch (n) {
+                    "object" == typeof window && (t = window)
+                }
+                n.exports = t
+            },
+            20: function(n, t, i) {
+                "use strict";
+                i.d(t, "a", function() {
+                    return r
+                });
+                var r = function() {
+                    function n() {}
+                    return n.current = function() {
+                        return window && window.__MCJS_EXTENSION_DATA__ || {}
+                    }, n
+                }()
+            },
+            29: function(n, t, i) {
+                "use strict";
+                i.d(t, "a", function() {
+                    return r
+                });
+                var r = function() {
+                    function n() {}
+                    return n.prototype.now = function() {
+                        return +new Date
+                    }, n
+                }()
+            },
+            4: function(n, t, i) {
+                "use strict";
+                (function(n) {
+                    i.d(t, "a", function() {
+                        return r
+                    });
+                    var r = function() {
+                        function t() {}
+                        return t.current = function() {
+                            var t = "undefined" != typeof window ? window : "undefined" != typeof self ? self : void 0 !== n ? n : null;
+                            if (!t)
+                                throw new Error("Unsupported environment.");
+                            return t
+                        }, t
+                    }()
+                }).call(this, i(18))
+            },
+            42: function(n, t, i) {
+                "use strict";
+                var u = i(20),
+                    f = i(12),
+                    r;
+                i.d(t, "a", function() {
+                    return r
+                });
+                r = function() {
+                    function n(n, t) {
+                        this.sender = n;
+                        this._time = t
+                    }
+                    return n.prototype.create = function(n, t) {
+                        var i = {
+                            _meta: {
+                                type: n
+                            }
+                        };
+                        return t && function(n) {
+                            for (var i = [], t = 1; t < arguments.length; t++)
+                                i[t - 1] = arguments[t];
+                            n || (n = {});
+                            Object(f.a)(function(t, i) {
+                                void 0 === n[t] && (n[t] = i)
+                            }, n, i)
+                        }(i, t), i
+                    }, n.prototype.send = function(n, t) {
+                        if (!n || !n._meta)
+                            throw new Error("Message or message type is undefined");
+                        (n = JSON.parse(JSON.stringify(n)))._meta.timestamp = this._time.now();
+                        n._meta.tabId = u.a.current().tabId;
+                        this.sender.send(n, t)
+                    }, n.prototype.debug = function(n) {
+                        this.sender.environment({
+                            debug: n
+                        })
+                    }, n.prototype.context = function(n) {
+                        this.sender.context(n)
+                    }, n
+                }()
+            }
+        })
+    })
+    </script>
+
+    <link id="homeApiPreload" rel="preload" href="/api/en-us/Home/GetHomeContents"/>
+
+    <script type="text/javascript" id="getPageParams">
+    var messagingClient = window.messagingClient || MessagingClient.instantiate();
+
+    var onErrorParams = function(url, error) {
+        var message = messagingClient.create('log',
+        {
+            level: 'error',
+            message: '[HomePageParams]:' + url + ':' + error,
+            applicationName: 'www.kereta.com'
+        });
+        messagingClient.send(message);
+    };
+
+    kereta = window.kereta || {};
+    kereta.perf = {};
+    kereta.perf.getData = function(url) {
+        return new Promise(function(resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+                    try {
+                        var result = JSON.parse(xhr.responseText);
+                        resolve(result);
+                    } catch (ex) {
+                        onErrorParams(url, "Error parsing from JSON: " + ex);
+                        reject("Error parsing from JSON: " + ex);
+                    }
+                }
+            };
+
+            xhr.onerror = function(err) {
+                onErrorParams(url, "Error getting response:" + err);
+
+                reject("Error getting response: " + xhr.status);
+            };
+
+            xhr.open('GET', url, true);
+            xhr.send(null);
+        })
+    };
+    </script>
+
+    <script type="text/javascript" id="homePageParams">
+    window.homeRequest = {} || window.homeRequest;
+    window.homeRequest.homeComponentContent = kereta.perf.getData('/api/en-us/Home/GetHomeContents');
+    kereta.isWlsiFixEnv = true;
+    </script>
+
+    <link rel="preload" href=_ as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/default-flightsdetails-flightsresults-home-property-search-umrah.home-838f3c6869e7.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/vendors-flightsdetails-flightsresults-home-property-search-umrah.home-7f9b2286f3ee.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/vendors-flightsresults-home-property-search-umrah.home-b31a4605860e.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/vendors-flightsresults-home-property-search-2c81cd2f65dd.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/default-home-property-search-820f3f240910.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/commons-home-a5703b1b54bd.js" as="script">
+    <link rel="preload" href="https://cdn6.kereta.net/js/assets/DYNA/home-e70d899fcded.js" as="script">
+
+    <script>
+    kereta = {};
+
+    (function() {
+        var method;
+        var noop = function() {};
+        var methods = [
+        'assert', 'clear', 'count', 'debug', 'dir', 'dirxml', 'error',
+        'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
+        'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
+        'timeline', 'timelineEnd', 'timeStamp', 'trace', 'warn'
+        ];
+        var length = methods.length;
+        var console = (window.console = window.console || {});
+
+        while (length--)
+        {
+            method = methods[length];
+            // Only stub undefined methods.
+            if (!console[method])
+            {
+                console[method] = noop;
+            }
+        }
+
+    }());
+    </script>
+    <script>
+    var kereta = window.kereta || {};
+    kereta.userInfo = {
+        "isNah": false
+    };
+    </script>
+
+    <script type="text/javascript" id="RUMAHkereta">
+    kereta = kereta || {};
+    kereta.RUMAHkereta = 'newhome';
+    </script>
+
+    <script>
+    var kereta = kereta || {};
+
+
+    kereta.pageConfig = {
+        pageTypeId: 1,
+        origin: 'MY',
+        cid: -1,
+        tag: '',
+        gclid: '',
+        aid: 130589,
+        userId: 'dda773fd-3e6a-4958-ad09-6ac6eacf0456',
+        realLanguageId: 1,
+        loginLvl: 0,
+        languageId: 1,
+        languageFlag: 'us',
+        sessionId: '4sf5h4wkfb5ispstijmusbet',
+        storefrontId: '3',
+        currencyId: 4,
+        currencyCode: 'MYR',
+        htmlLanguage: 'en-us',
+        cttp: 4,
+        machineName: 'SG-AGWEB-6A12',
+        cultureInfoName: 'en-US',
+        trafficGroupId: 1,
+        prid: 0,
+        whitelabelid: 1,
+
+
+        trafficSubGroupId: 84,
+        isLive: true,
+        isRealUser: true
+
+
+    };
+
+    kereta.userDevice = {
+        mobileDeviceType: 'NOTMOBILE',
+        devicePlatformId: 1,
+        deviceType: 'desktop'
+    };
+
+    kereta.userAgentInfo = {
+        isPrerender: 'False'
+    }
+
+    kereta.hotCityRequestConfig = {
+        endpoint:
+        '/api/en-us/HotCity/GetHotCities',
+        numberOfItems: 6
+    };
+
+    kereta.topDestinations = {
+        endPoint: '/api/en-us/Recommended/GetTopDestinations',
+        numberOfItems: 8,
+        suggestionMaxItemNumber: 6,
+        headerText: 'Most popular destinations'
+    };
+
+
+
+    kereta.zenithClientConfig = {
+        endpoint:
+        '/api/en-us/Recommended/_action_',
+        requestData: {
+            searchObjectId: 0,
+            searchType: 0,
+            searchObjectIds: [0]
+        },
+        numberOfItems: 6
+    };
+
+    kereta.menu = {
+        language: {
+            get: '/api/en-us/Culture/GetLanguages',
+            set: '/api/en-us/Main/SetSelectedLanguage'
+        },
+        currency: {
+            get: '/api/en-us/Main/GetCurrencyList',
+            set: '/api/en-us/Main/SetSelectedCurency',
+            suggestedCurrencyLabel: 'Suggested currencies',
+            topCurrencyLabel: 'Popular currencies',
+            allCurrencyLabel: 'All currencies'
+        },
+    };
+
+    kereta.isImprovedStagedLoading = false
+    kereta.isHollowImprovedStagedLoading = false
+    kereta.isStagedPreloading = false
+    kereta.isStagedFontLoading = false
+    kereta.disableTti = false
+    kereta.disableStagePrerender = true
+    kereta.isDictatorStageVisibility = false
+    kereta.isVisuallyWithScrollPosition = true;
+    kereta.isVisuallyCompleteWithMoreTimeout = false;
+    kereta.isNonkeretaResourceAggregate = false;
+    kereta.isResourceAggregateWithSize = true;
+    kereta.whitelabelDomain = [".kereta.com", "kereta.fr", "kereta.de", "kereta.it", "kereta.es", "kereta.jp", "kereta.com.hk", "kereta.com.cn", "kereta.co.kr", "kereta.gr", "kereta.ru", "kereta.com.pt", "kereta.nl", "kereta.ca", "kereta.co.in", "kereta.co.uk", "kereta.co.za", "kereta.com.au", "kereta.com.sg", "kereta.com.tw", "kereta.co.nz", "kereta.co.th", "kereta.com.my", "kereta.vn", "kereta.se", "kereta.web.id", "kereta.pl", "kereta.no", "kereta.dk", "kereta.fi", "kereta.cz", "kereta.com.tr", "kereta.cat", "kereta.hu", "kereta.in", "kereta.bg", "kereta.ro", "kereta.si", "kereta.co.il", "kereta.ae", "kereta.be", "kereta.ie", "kereta.com.br", "kereta.com.ar", "kereta.com.mx", "kereta.lt", "kereta.lv", "kereta.co.cr", "kereta.co.ee", "kereta.ua", "kereta.com.bh", "kereta.com.ee", "kereta.com.eg", "kereta.com.es", "kereta.com.hr", "kereta.com.kh", "kereta.com.om", "kereta.com.ph", "kereta.com.pk", "kereta.com.pl", "kereta.com.ua", "kereta.com.ve", "kereta.com.vn", "kereta.ee", "kereta.eu", "kereta.gq", "kereta.hk", "kereta.hm", "kereta.id", "kereta.in.th", "kereta.is", "kereta.kr", "kereta.la", "kereta.li", "kereta.lk", "kereta.lu", "kereta.net", "kereta.org", "kereta.ph", "kereta.pk", "kereta.pt", "kereta.rs", "kereta.sg", "kereta.sk", "kereta.st", "kereta.th", "kereta.uk", "kereta.us", "kereta.al", "kereta.at", "kereta.cn", "kereta.co.at", "kereta.co.id", "kereta.co.ma", "kereta.rs", "kereta.cr", "kereta.ch", "kereta.com.edgekey.net"];
+
+
+
+    window.searchBoxReact = {
+        "tabs": [{
+            "type": -1,
+            "title": "Cars",
+            "hashName": "",
+            "tagText": null
+        }, ],
+        "paymentLogos": null,
+        "defaultTab": -1,
+        "searchCriteria": {
+            "searchText": "",
+            "searchTextDesc": null,
+            "checkIn": "2020-06-17T19:22:38.0620425+07:00",
+            "checkOut": "2020-06-18T19:22:38.0620425+07:00",
+            "occupancy": {
+                "room": 1,
+                "adults": 2,
+                "children": 0,
+                "childAges": null,
+                "checkbox": {
+                    "type": 0
+                },
+                "travellerType": 1
+            }
+        },
+        "config": {
+            "page": {
+                "languageId": 1,
+                "userId": "dda773fd-3e6a-4958-ad09-6ac6eacf0456",
+                "sessionId": "4sf5h4wkfb5ispstijmusbet",
+                "pageTypeId": 1,
+                "origin": "MY",
+                "currency": null,
+                "locale": "en-US",
+                "cid": -1,
+                "tag": "",
+                "gclid": "",
+                "aid": 130589,
+                "currencyCode": "MYR",
+                "htmlLanguage": "en-us",
+                "cultureInfoName": "en-US",
+                "memberId": null,
+                "ckuid": "dda773fd-3e6a-4958-ad09-6ac6eacf0456",
+                "prid": 0
+            },
+            "autoComplete": {
+                "autoCompleteUrl": "/Search/Search/GetUnifiedSuggestResult/3/1/1/0/en-us/",
+                "topDestination": {
+                    "url": "/api/en-us/Recommended/GetRecommendedCities",
+                    "urlFallback": "/api/en-us/Recommended/GetTopDestinations",
+                    "amount": 6
+                },
+                "googleSearchUrl": "https://maps.googleapis.com/maps/api/js?libraries=places\u0026key=AIzaSyCTqBoQYEcHMQuAXJxVbIP1ladksZNEMVY\u0026channel=kereta-textsearch",
+                "recentSearchAmount": 3,
+                "loadingCount": 6
+            },
+            "calendar": {
+                "checkInRange": {
+                    "start": -1,
+                    "end": 365
+                },
+                "checkOutRange": {
+                    "start": 1,
+                    "end": 365
+                },
+                "holidaysUrl": "/api/en-us/npcapi/GetHolidays/",
+                "calendarExtrasUrl": "/api/en-us/npcapi/GetCalendarExtrasAsync/",
+                "firstDayOfWeek": 1,
+                "defaultLos": 1,
+                "maximumAllowedLos": 90,
+                "showDatePickerAlert": false,
+                "showLongTermRentalHighlight": true
+            },
+            "occupancy": {
+                "rooms": {
+                    "min": 1,
+                    "max": 9
+                },
+                "adults": {
+                    "min": 1,
+                    "max": 36
+                },
+                "children": {
+                    "min": 0,
+                    "max": 9
+                },
+                "maxRooms": 9,
+                "defaultChildAge": 8
+            },
+            "defaultSearchURL": "",
+            "failSafeUrl": "/newsite/en-us/host/SearchResult/Search",
+            "searchRenderMessageUrl": "/api/en-us/Main/SendSearchRenderMessage",
+            "searchActionMessageUrl": "/api/en-us/Main/SendSearchActionMessage",
+            "priceFilterSettingsUrl": "/api/en-us/Price/GetPriceFilterData",
+            "emptyDate": false,
+            "defaultPopup": -1,
+            "isCircleRating": false,
+            "restaurantsUrl": "https://eatigo.com/home/?utm_source=kereta\u0026utm_medium=partner\u0026utm_campaign=home-header-restaurants-links",
+            "groundTransportUrl": "/api/GroundTransportApi/getdestination",
+            "groundTransportActionMessageUrl": "/api/GroundTransportApi/SendGroundTransportMessage",
+            "enableTypeAnywhere": false,
+            "autoApplyFilter": null,
+            "applyFamilyMode": false,
+            "useRoomOccupancy": false,
+            "openSearchboxAtLanding": false
+        },
+        "cms": {
+            "autoComplete": {
+                "properties": "properties",
+                "Cars": "1 car",
+                "Cars": "{0} Cars",
+                "adult": "1 adult ",
+                "adults": "{0} adults",
+                "child": "1 child",
+                "children": "{0} children",
+                "bestSeller": "Best seller",
+                "popular": "Popular"
+            },
+            "dateRange": {
+                "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                "daysShort": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+                "daysLong": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "confirmDateText": "Select your travel dates for pricing and availability",
+                "confirmDateCancelText": "No thanks, I’ll do it later",
+                "titleFormat": "{MM} {yy}",
+                "titleText": "PERFECT CHOICE!"
+            },
+            "occupancy": {
+                "room": "Room",
+                "rooms": "Rooms",
+                "adult": "Adult",
+                "adults": "Adults",
+                "child": "Child",
+                "children": "Children",
+                "childAge": "Child\u0027s age (years)",
+                "childrenAge": "Children\u0027s ages (years)",
+                "warningText": "Child\u0027s age has been set to {0} years old.",
+                "warningTextPlural": "Children\u0027s ages have been set to {0} years old.",
+                "warningDesc": "Enter the actual age below – it may lower room prices!",
+                "warningDescPlural": "Enter their actual ages below – it may lower room prices!",
+                "ageRange": ["−", "\u003c1", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"],
+                "noChildrenTitle": "Traveling with kids?",
+                "noChildrenDesc": "Include them above for the best prices and offers available with children friendly properties.",
+                "checkbox": {
+                    "preferFamilyCars": "I’d prefer a family car",
+                    "preferGroupCars": "I’d prefer a big/family van",
+                    "showFamilyOptions": "Show me family/child friendly options",
+                  
+                },
+                "segmentFamilies": "Family travelers",
+                "segmentGroup": "Group travelers",
+                "segmentBusiness": "Business travelers",
+                "segmentBusinessBadgeText": null,
+                "segmentSolo": "Solo traveler",
+                "segmentCouples": "Couple/Pair",
+                "segmentBadgeText": "Save up to 12%",
+                "groupTravellerPartnerHeader": "Need 10 cars or more?",
+                
+                "groupTravellerPartnerNewTag": "NEW",
+                "groupTravellerPartnerActionText": "Get a group rate",
+                "businessTravellerPmxHeader": null,
+                "businessTravellerPmxSubHeader": null,
+                "businessTravellerPmxNewTag": null,
+                "businessTravellerPmxActionText": null,
+                "oneCarVsMoreTooltip": "Search for 1 car to see all vehicleproperties that can fit your entire group"
+            },
+            "summary": {
+                "datesFormat": "{0}, {2} {1} {3} - {4}, {6} {5} {7}",
+                "dateFormat": "{0}, {1} {2} {3}",
+                "singleNightFormat": "(1 night)",
+                "pluralNightsFormat": "({0} nights)",
+                "shortDayNames": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                "shortMonthNames": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                "confirmTravelDates": "Confirm your travel dates to see prices ",
+                "checkInDateText": "Check-in date",
+                "checkOutDateText": "Check-out date"
+            },
+            "searchBox": {
+                "dates": {
+                    "format": "{d} {M} {yy}",
+                    "shortFormat": "{0}, {1} {2} {3}",
+                    "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "shortDayNames": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                    "monthNames": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "checkInText": "Check-in",
+                    "checkOutText": "Check-out"
+                },
+                "occupancy": {
+                    "room": "1 room",
+                    "rooms": "{0} rooms",
+                    "adult": "1 adult",
+                    "adults": "{0} adults",
+                    "child": "1 child",
+                    "children": "{0} children",
+                    "childAge": null,
+                    "childrenAge": null,
+                    "warningText": null,
+                    "warningTextPlural": null,
+                    "warningDesc": null,
+                    "warningDescPlural": null,
+                    "ageRange": null,
+                    "noChildrenTitle": null,
+                    "noChildrenDesc": null,
+                    "checkbox": null,
+                    "segmentFamilies": null,
+                    "segmentGroup": null,
+                    "segmentBusiness": null,
+                    "segmentBusinessBadgeText": null,
+                    "segmentSolo": null,
+                    "segmentCouples": null,
+                    "segmentBadgeText": null,
+                    "groupTravellerPartnerHeader": null,
+                    "groupTravellerPartnerSubHeader": null,
+                    "groupTravellerPartnerNewTag": null,
+                    "groupTravellerPartnerActionText": null,
+                    "businessTravellerPmxHeader": null,
+                    "businessTravellerPmxSubHeader": null,
+                    "businessTravellerPmxNewTag": null,
+                    "businessTravellerPmxActionText": null,
+                    "oneRoomVsMoreTooltip": null
+                },
+                "placeholder": "Enter a destination or property",
+                "search": "Search",
+                "invalidSearch": "Please enter the name of a country, city, airport, neighborhood, landmark, or property to proceed.",
+                "invalidPackageDateRangeSearch": "Your check-in and check-out dates must fall within your arrival and departure dates. Please review your dates.",
+                "invalidPackageOccupancySearch": "Your occupancy should be same for both flight and hotel. Please review your occupancy",
+                "invalidPackageSameDateSearch": "Check-in and check out should be different dates",
+                "invalidPackageDifferentCountrySearch": "Your hotel destination should be within same country of flight arrival destination",
+                "lengthOfStayCms": {
+                    "checkInDateText": "Check-in date",
+                    "checkOutDatetext": "Check-out date",
+                    "lengthOfStaySingleText": "1-night stay",
+                    "lengthOfStayPluralText": "{0}-night stay"
+                },
+                "update": "Update",
+                "title": "Hotel",
+                "exceedsAllowedLengthOfStay": "Sorry, a booking cannot currently be more than {0} nights.",
+                "lengthOfStayCalendarHighlight": "Booking a long trip? Now you can search for stays of over 30 nights.",
+                "modifySearch": "Modify search",
+                "groundTransport": {
+                    "title": "Book a bus, ferry, train and more to reach your end destination!",
+                    "goingFrom": "Going from\n",
+                    "goingTo": "Going to\n",
+                    "passenger": "passenger",
+                    "passengers": "passengers",
+                    "searchTickets": "Search Tickets\n",
+                    "errorMessageTitle": "Route is not supported\n",
+                    "errorMessageDetails": "We\u0027re sorry! We currently don\u0027t have any availability for your search criteria.",
+                    "errorMessageOkay": "Okay",
+                    "oneWay": "One way"
+                },
+                "packageSearchBox": {
+                    "modifySearchText": "Modify search",
+                    "tripFromText": "Trip From {0} To {1}",
+                    "roomText": "1 room",
+                    "roomsText": "{0} rooms",
+                    "adultText": "1 adult ",
+                    "adultsText": "{0} adults",
+                    "adultWithChildText": "1 adult, 1 child",
+                    "adultsWithChildText": "{0} adults, 1 child",
+                    "adultWithChildrenText": "1 adult, {0} children",
+                    "adultsWithChildrenText": "{0} adults, {1} children",
+                    "hotelText": "Hotel",
+                    "flightText": "Flight"
+                },
+                "noAirportsOnOrigin": "There are no airports in the city you chose, please choose another origin",
+                "noAirportsOnDestination": "There are no airports in the city you chose, please choose another destination",
+                "sameCitySearch": "Please make sure you select origin and destination in different cities.",
+                "searchRooms": "",
+                "searchHomes": "",
+                "searchFlightsPlusHotel": "SEARCH FLIGHT + HOTEL",
+                "searchHotelInDifferentCityOrDate": "Search for hotel in different cities or dates",
+                "textSearchInputHeader": "Staying at"
+            },
+            "filters": {
+                "priceTitle": "Price per night",
+                "expandText": "Advanced search",
+                "reviewTitle": "Guest rating",
+                "reviewAll": "All",
+                "reviewScore": "{0} and up",
+                "ratingTitle": "Star rating",
+                "ratingAndUp": "and up"
+            },
+            "dateDefinition": null,
+            "highlyAvailable": null,
+            "title": "Hotel",
+            "showPackageDeals": {
+                "cardText": "Save up to {0}% on hotels",
+                "ribbonText": "Flight + Hotel"
+            },
+            "showPackageDealsOnFlight": {
+                "addHotelToSaveUpText": "Bundle and Save",
+                "bundleAndSaveText": "Add hotel to save up to 25%",
+                "searchFlightsPlusHotelText": "SEARCH FLIGHT + HOTEL"
+            },
+            "multiplePlacesToStayText": "I need multiple places to stay"
+        }
+    };
+
+
+
+    window.flightSearchBoxReact = {
+        "cms": {
+            "autoComplete": {
+                "originPlaceholder": "Flying from",
+                "destinationPlaceholder": "Flying to",
+                "allAirports": "All airports"
+            },
+            "occupancy": {
+                "passenger": "Passenger, {cabinClass}",
+                "passengers": "Passengers, {cabinClass}",
+                "adult": "Passenger",
+                "adults": "Passengers",
+                "adultPassengers": "Adults (\u003e11yrs)",
+                "adultPassenger": "Adults (\u003e11yrs)",
+                "adultsRange": "Total number of passengers cannot exceed {maxTotalPax}",
+                "child": "Children (2-11yrs)",
+                "children": "Children (2-11yrs)",
+                "childrenRange": "Each adult may accompany a maximum of 2 children",
+                "infant": "Infants (\u003c2yrs)",
+                "infants": "Infants (\u003c2yrs)",
+                "infantsRange": "Each adult may accompany a maximum of 1 infant",
+                "childrenAndInfantsRange": "Children and infants must be accompanied by an adult. Tickets for unaccompanied children and infants must be reserved directly with the airline.",
+                "error": "Error !",
+                "room": "Room",
+                "rooms": "Rooms",
+                "continue": "Continue"
+            },
+            "cabinClass": {
+                "economy": "Economy",
+                "premiumEconomy": "Premium economy",
+                "business": "Business",
+                "first": "First"
+            },
+            "dateSelector": {
+                "input": {
+                    "departText": "Departure",
+                    "returnText": "Return",
+                    "format": "{d} {M} {yy}",
+                    "shortFormat": "{0}, {1} {2} {3}",
+                    "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "shortDayNames": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+                    "monthNames": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    "addReturn": "Add return"
+                },
+                "dateRange": {
+                    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                    "daysShort": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+                    "daysLong": null,
+                    "confirmDateText": "Select your travel dates for pricing and availability",
+                    "confirmDateCancelText": "No thanks, I’ll do it later",
+                    "titleFormat": "{MM} {yy}",
+                    "titleText": "PERFECT CHOICE!"
+                }
+            },
+            "searchButton": "Search",
+            "searchFlightsButton": "Search flights",
+            "invalidRoundTripSearchMessage": "Please enter the origin, destination and your travel dates to proceed.",
+            "invalidOneWaySearchMessage": "Please enter the origin, destination and your travel date to proceed.",
+            "noAirportsOnBothOriginAndDestination": "There are no airports in the cities you chose, please choose other origin and destination",
+            "noAirportsOnOrigin": "There are no airports in the city you chose, please choose another origin",
+            "noAirportsOnDestination": "There are no airports in the city you chose, please choose another destination",
+            "sameCitySearch": "Please make sure you select origin and destination in different cities.",
+            "oneWay": "One-way",
+            "roundTrip": "Round-trip",
+            "title": "Flight",
+            "newPackageTitle": null,
+            "searchModifyButton": "Modify search"
+        },
+        "configs": {
+            "occupancy": {
+                "adults": {
+                    "min": 1,
+                    "max": 6
+                },
+                "children": {
+                    "min": 0,
+                    "max": 12
+                },
+                "infants": {
+                    "min": 0,
+                    "max": 6
+                },
+                "rooms": {
+                    "min": 1,
+                    "max": 6
+                }
+            },
+            "dateSelector": {
+                "startRange": {
+                    "start": -1,
+                    "end": 365
+                },
+                "endRange": {
+                    "start": -1,
+                    "end": 365
+                },
+                "holiday": null
+            },
+            "gatewayUrl": "https://gw.kereta.com",
+            "searchPageUrl": "/flights/results"
+        },
+        "initialOccupancy": {
+            "adults": 1,
+            "children": 0,
+            "infants": 0,
+            "rooms": 1
+        },
+        "isBgImgEnabled": false,
+        "isIllustrationImgEnabled": true,
+        "isPackageExp": true,
+        "isFixMarketingQueryString": false,
+        "flightsMarketing": {
+            "flightsMkt1": "Z",
+            "flightsMkt2": "Z",
+            "flightsMkt3": "Z",
+            "flightsMkt4": "Z",
+            "flightsMkt5": "Z",
+            "flightsMkt6": "Z",
+            "flightsMkt7": "Z",
+            "flightsMkt8": "Z",
+            "flightsMkt9": "Z",
+            "flightsMkt10": "Z"
+        }
+    };
+
+
+
+    kereta.reactHeader = {
+        "menuViewModel": {
+            "cms": {
+                "signInText": "Sign in",
+                "signUpText": "Create account",
+                "signOutText": "Sign out",
+                "loginHeader": "Sign in",
+                "settingsHeader": "Settings",
+                "myBookingsText": "My bookings",
+                "listYourPlaceText": "List your place",
+                "listingYourPlaceTitleText": "List your place on kereta",
+                "listingYourPlaceDetailText": "Earn money to pay for your travel!",
+                "listingYourPlaceLinkText": "List your place today",
+                "listingYourPlaceTooltipText": " In the past 24 hours, there were {0} travelers looking to book a place like yours. List now!",
+                "listingYourPlaceTooltipDismissText": "Don\u0027t show this again.",
+                "myBookingsPopUpIntentHeader": "Booked on or before December 15, 2019?",
+                "myBookingsPopUpIntentText": "Please visit {0} to confirm or make changes to your booking.",
+                "myBookingsPopUpHeader": "Booked on or after December 16, 2019?",
+                "myBookingsPopUpText": "Please check your booking confirmation email. You can easily access your booking from the link inside that email.",
+                "myBookingsPopUpIntentLinkLabel": "My Bookings",
+                "myBookingsPopUpIntentButtonLabel": "Retrieve Booking",
+                "myBookingsPopUpButtonDividerText": "or",
+                "myBoookigsPopUpCloseButtonLabel": "Close"
+            },
+            "links": null,
+            "userMenuViewModel": null,
+            "languageMenuViewModel": {
+                "cms": {
+                    "suggestedLanguagesText": "Suggested languages",
+                    "allLanguagesText": "All languages"
+                },
+                "languageFlag": "us",
+                "languageTranslation": "English"
+            },
+            "currencyMenuViewModel": {
+                "cms": {
+                    "priceViewText": "PRICE DISPLAY",
+                    "perNightBasePriceText": "Base price per night",
+                    "perNightWithTaxesAndFeesText": "Total price per night",
+                    "suggestedCurrenciesText": "Suggested currencies",
+                    "topCurrenciesText": "Popular currencies",
+                    "allCurrenciesText": "All currencies"
+                },
+                "finalPriceView": 1,
+                "currency": {
+                    "id": 4,
+                    "code": "MYR",
+                    "text": "Malaysian Ringgit",
+                    "isTopCurrency": true,
+                    "isSuggested": true,
+                    "noDecimal": 2,
+                    "display": "RM"
+                }
+            },
+            "downloadWechatApp": null,
+            "followWechat": null,
+            "cegInfo": null,
+            "wysiwyp": {
+                "page": "home-desktop",
+                "currentPriceView": 1,
+                "linkText": ""
+            },
+            "todaysDealsPopup": null,
+            "isApplyGiftcard": false,
+            "applyGiftcardMenuText": null
+        },
+        "culture": "en-us",
+        "logoAndLinksMenu": null,
+        "experiments": null
+    };
+    kereta.reactHeader.culture = 'en-us';
+    kereta.reactHeader.menuViewModel.links = {
+        "keretaHostnameWithLocale": "//www.kereta.com",
+        "mykeretaHostNameWithLocale": "https://my.kereta.com",
+        "customerSupportLink": "/info/kereta_faq.html",
+        "contactLink": "/info/contact.html",
+        "openSearchLink": "//www.kereta.com/opensearch.xml",
+        "forgetPasswordUrl": "/account/signin.html?option=reset-password",
+        "signupUrl": "/account/signin.html?option=signup",
+        "myProfileLink": "/account/profile.html",
+        "manageBookingsUrl": "/account/bookings.html",
+        "inboxUrl": "/account/inbox.html",
+        "myReviewsUrl": "/account/reviews.html",
+        "myBookingPage": "/account/bookings.html",
+        "myFlightsBookingPage": "/flights/account/bookings",
+        "myCreditCardPage": "/account/profile.html#mmb-profile-payment-section",
+        "giftCardUrl": "/account/giftcards.html?ckuid=dda773fd-3e6a-4958-ad09-6ac6eacf0456",
+        "giftCardMigrationUrl": "https://my.kereta.com/mybookings.html?migration=2\u0026ckuid=dda773fd-3e6a-4958-ad09-6ac6eacf0456",
+        "referAFriendUrl": "//www.kereta.com/account/refer-a-friend.html",
+        "aboutuskeretaLink": "/info/about-kereta.html",
+        "aboutuskeretaChinaLicense": "",
+        "aboutuskeretaInNewsLink": "/info/kereta-news.html",
+        "aboutuskeretaPrivacyLink": "/info/privacy.html",
+        "aboutuskeretaTermOfUseLink": "/info/termsofuse.html",
+        "aboutusTravelBlogLink": "//travelblog.kereta.com",
+        "aboutusMediaRoomLink": "//mediaroom.kereta.com",
+        "aboutusPressLink": "/press",
+        "aboutusWorldLink": "//www.kereta.com/world.html",
+        "aboutusBlogLink": "/blog",
+        "forYouPropertyPartnersLink": "//ycs.kereta.com",
+        "forYouAffiliatePartnersLink": "//partners.kereta.com/index.html",
